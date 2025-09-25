@@ -42,8 +42,8 @@ pipeline {
                 if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT.war" (
                     del /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT.war"
                 )
-                if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT" (
-                    rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT"
+                if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT.war" (
+                    rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT.war"
                 )
                 copy "AGRICULTURE-SPRINGBOOT\\target\\*.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\"
                 '''
