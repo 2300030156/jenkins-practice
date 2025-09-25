@@ -6,7 +6,7 @@ pipeline {
         // ===== FRONTEND BUILD =====
         stage('Build Frontend') {
             steps {
-                dir('adminhome') {
+                dir('AGRICULTURE-REACT') {
                     bat 'npm install'
                     bat 'npm run build'
                 }
@@ -21,7 +21,7 @@ pipeline {
                     rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\adminhome"
                 )
                 mkdir "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\adminhome"
-                xcopy /E /I /Y STUDENTAPI-REACT\\dist\\* "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\adminhome"
+                xcopy /E /I /Y AGRICULTURE-REACT\\dist\\* "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\adminhome"
                 '''
             }
         }
@@ -42,8 +42,8 @@ pipeline {
                 if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT.war" (
                     del /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT.war"
                 )
-                if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT.war" (
-                    rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT.war"
+                if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT" (
+                    rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\AGRICULTURE-SPRINGBOOT"
                 )
                 copy "AGRICULTURE-SPRINGBOOT\\target\\*.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\"
                 '''
